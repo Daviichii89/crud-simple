@@ -10,19 +10,16 @@ describe('App', () => {
       expect(screen.getByText('No hay tareas')).toBeInTheDocument();
     })
     it('Click the button Agregar', () => {
-      const mockHandler = jest.fn();
-      render(<App agregarTarea={mockHandler}/>);
-
+      const onSubmit = jest.fn();
+      const {getByTestId} = render(<App onSubmit={onSubmit}/>);
+      fireEvent.submit(getByTestId("form"))
+      // falta el mock para ejecutar la funcion del boton 
+      expect(onSubmit).toHaveBeenCalled(1)
       /*
       const addButton = screen.getByText('Agregar');
       expect(addButton).toBeInTheDocument();
       userEvent.click(addButton);
       */
-      const submitForm = (screen.getByTestId("form"));
       //expect(submitForm);
-      fireEvent.submit(submitForm)
-
-      // falta el mock para ejecutar la funcion del boton
-      expect(mockHandler.mock.calls).toHaveLength(1); 
     })
 });
