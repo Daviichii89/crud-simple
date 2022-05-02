@@ -20,6 +20,14 @@ describe('App', () => {
       expect(addButton).toBeInTheDocument();
       userEvent.click(addButton);
       */
-      //expect(submitForm);
+
+      /*
+        DOCUMENTATION
+        -------------
+        https://kula.blog/posts/test_on_submit_in_react_testing_library/
+        https://testing-library.com/docs/ecosystem-user-event/
+        https://blog-es.mimacom.com/react-testing-library-fireevent-vs-userevent/
+        https://www.youtube.com/watch?v=KYjjtRgg_H0&list=WL&index=1
+      */
     })
 });
